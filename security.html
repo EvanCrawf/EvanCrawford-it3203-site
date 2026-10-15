@@ -1,0 +1,108 @@
+<!-- IT 3203 Milestone 1 - Home page - Evan Crawford -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP and HTTPS | HTTPS and Security</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <p class="site-title">HTTP &amp; HTTPS: The Language of the Web</p>
+    <nav id="main-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">HTTP Versions</a></li>
+        <li><a href="security.html" class="active">HTTPS &amp; Security</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>HTTPS and Web Security</h1>
+
+    <h2>Why Plain HTTP Is Not Safe</h2>
+    <p>
+      Plain HTTP sends data without encryption. Anyone between the browser and the server,
+      such as another person on the same coffee shop Wi-Fi, could see what is being sent.
+      This creates three risks:
+    </p>
+    <ul>
+      <li><strong>Eavesdropping</strong> &ndash; someone reads the data, such as a password.</li>
+      <li><strong>Tampering</strong> &ndash; someone changes the data before it arrives.</li>
+      <li><strong>Impersonation</strong> &ndash; a fake server pretends to be the real website.</li>
+    </ul>
+
+    <figure>
+      <img src="images/tls-envelope.svg" alt="Diagram comparing a readable password sent over HTTP with scrambled encrypted data sent over HTTPS" width="720" height="200">
+      <figcaption>Figure 2: With HTTP the data is readable; with HTTPS it is encrypted.</figcaption>
+    </figure>
+
+    <h2>What HTTPS Adds</h2>
+    <p>
+      HTTPS is not a separate protocol. It is regular HTTP running inside a secure
+      <strong>TLS</strong> (Transport Layer Security) connection. A good way to picture it:
+      HTTP is the letter, and TLS is the sealed, tamper-proof envelope around it.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Guarantee</th>
+          <th>What It Means</th>
+          <th>Risk It Stops</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Confidentiality</td>
+          <td>Only the browser and server can read the data.</td>
+          <td>Eavesdropping</td>
+        </tr>
+        <tr>
+          <td>Integrity</td>
+          <td>Any change to the data in transit is detected.</td>
+          <td>Tampering</td>
+        </tr>
+        <tr>
+          <td>Authentication</td>
+          <td>A certificate proves the server is who it says it is.</td>
+          <td>Impersonation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The TLS Handshake (Simplified)</h2>
+    <p>Before any encrypted data is sent, the browser and server agree on how to talk securely:</p>
+    <ol>
+      <li>The browser sends a <em>client hello</em> listing the encryption methods it supports.</li>
+      <li>The server replies with a <em>server hello</em> and its digital certificate.</li>
+      <li>The browser checks that the certificate was signed by a trusted certificate authority.</li>
+      <li>Both sides create shared session keys, and encrypted communication begins.</li>
+    </ol>
+
+    <h2>HTTPS Today</h2>
+    <p>
+      Free certificate services like <strong>Let's Encrypt</strong> (launched in 2015) removed
+      the cost barrier for website owners. Browsers now mark plain HTTP pages as
+      &ldquo;Not Secure,&rdquo; and most web traffic today is sent over HTTPS.
+    </p>
+  </main>
+
+  <footer id="site-footer">
+    <p>
+      This website is a class project for
+      <a href="https://ksuweb.github.io/IT3203/">IT 3203 Introduction to Web Development</a>
+      at Kennesaw State University, Fall 2026.
+    </p>
+  </footer>
+
+</body>
+</html>
+
+!--  footer- class project note with link to class site -->

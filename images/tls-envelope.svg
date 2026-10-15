@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" font-family="Arial, sans-serif">
+  <rect width="720" height="200" fill="#ffffff"/>
+  <g fill="#1f3a5f" font-size="15" font-weight="bold" text-anchor="middle">
+    <rect x="20" y="30" width="120" height="50" rx="6" fill="#e8eef6" stroke="#1f3a5f"/>
+    <text x="80" y="60">Browser</text>
+    <rect x="580" y="30" width="120" height="50" rx="6" fill="#e8eef6" stroke="#1f3a5f"/>
+    <text x="640" y="60">Server</text>
+    <rect x="20" y="120" width="120" height="50" rx="6" fill="#e8eef6" stroke="#1f3a5f"/>
+    <text x="80" y="150">Browser</text>
+    <rect x="580" y="120" width="120" height="50" rx="6" fill="#e8eef6" stroke="#1f3a5f"/>
+    <text x="640" y="150">Server</text>
+  </g>
+  <line x1="140" y1="55" x2="580" y2="55" stroke="#b33a3a" stroke-width="3"/>
+  <text x="360" y="45" font-size="14" fill="#b33a3a" text-anchor="middle">HTTP: password=hunter2 (anyone can read it)</text>
+  <line x1="140" y1="145" x2="580" y2="145" stroke="#2e7d4f" stroke-width="3"/>
+  <text x="360" y="135" font-size="14" fill="#2e7d4f" text-anchor="middle">HTTPS: 8f3a9c1e... (encrypted by TLS)</text>
+</svg>

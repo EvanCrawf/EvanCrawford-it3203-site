@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 170" width="720" height="170" font-family="Arial, sans-serif">
+  <rect width="720" height="170" fill="#ffffff"/>
+  <line x1="40" y1="85" x2="680" y2="85" stroke="#1f3a5f" stroke-width="4"/>
+  <g fill="#2c6db5">
+    <circle cx="70" cy="85" r="10"/>
+    <circle cx="200" cy="85" r="10"/>
+    <circle cx="330" cy="85" r="10"/>
+    <circle cx="500" cy="85" r="10"/>
+    <circle cx="650" cy="85" r="10"/>
+  </g>
+  <g fill="#1f3a5f" font-size="16" font-weight="bold" text-anchor="middle">
+    <text x="70" y="55">1991</text>
+    <text x="200" y="55">1996</text>
+    <text x="330" y="55">1997</text>
+    <text x="500" y="55">2015</text>
+    <text x="650" y="55">2022</text>
+  </g>
+  <g fill="#222222" font-size="15" text-anchor="middle">
+    <text x="70" y="120">HTTP/0.9</text>
+    <text x="200" y="120">HTTP/1.0</text>
+    <text x="330" y="120">HTTP/1.1</text>
+    <text x="500" y="120">HTTP/2</text>
+    <text x="650" y="120">HTTP/3</text>
+  </g>
+</svg>

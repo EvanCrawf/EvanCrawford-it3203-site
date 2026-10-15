@@ -1,0 +1,112 @@
+<!-- IT 3203 Milestone 1 - Home page - Evan Crawford -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP and HTTPS | HTTP Versions</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <p class="site-title">HTTP &amp; HTTPS: The Language of the Web</p>
+    <nav id="main-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html" class="active">HTTP Versions</a></li>
+        <li><a href="security.html">HTTPS &amp; Security</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>The Evolution of HTTP</h1>
+    <p>
+      HTTP was created by Tim Berners-Lee at CERN in 1989&ndash;1991 as part of the original
+      World Wide Web. Since then it has gone through four major versions. Each one was built
+      to fix a problem that the older version could not handle as websites became larger
+      and more complex.
+    </p>
+
+    <figure>
+      <img src="images/http-timeline.svg" alt="Timeline showing HTTP/0.9 in 1991, HTTP/1.0 in 1996, HTTP/1.1 in 1997, HTTP/2 in 2015, and HTTP/3 in 2022" width="720" height="170">
+      <figcaption>Figure 1: Major HTTP versions over time.</figcaption>
+    </figure>
+
+    <h2>Version Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Year</th>
+          <th>Main Improvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTTP/0.9</td>
+          <td>1991</td>
+          <td>One command (GET) that returned a plain HTML page. No headers or status codes.</td>
+        </tr>
+        <tr>
+          <td>HTTP/1.0</td>
+          <td>1996</td>
+          <td>Added headers, status codes, and support for images and other file types.</td>
+        </tr>
+        <tr>
+          <td>HTTP/1.1</td>
+          <td>1997</td>
+          <td>Persistent connections that stay open for many requests, plus the required Host header.</td>
+        </tr>
+        <tr>
+          <td>HTTP/2</td>
+          <td>2015</td>
+          <td>Multiplexing (many requests at once on one connection), header compression, binary format.</td>
+        </tr>
+        <tr>
+          <td>HTTP/3</td>
+          <td>2022</td>
+          <td>Runs on QUIC over UDP instead of TCP for faster setup and better handling of lost packets.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The Problem with HTTP/1.1</h2>
+    <p>
+      HTTP/1.1 served the web for almost twenty years, but it had a weakness called
+      <strong>head-of-line blocking</strong>. Requests on one connection had to be answered
+      in order, so one slow file delayed everything behind it. Browsers worked around this by
+      opening about six connections per site, which used extra resources.
+    </p>
+
+    <h2>HTTP/2 and HTTP/3</h2>
+    <p>HTTP/2 fixed most of these issues with three main changes:</p>
+    <ol>
+      <li><strong>Multiplexing</strong> &ndash; many requests and responses travel at the same time over one connection.</li>
+      <li><strong>Header compression (HPACK)</strong> &ndash; repeated header data is not sent over and over.</li>
+      <li><strong>Binary framing</strong> &ndash; messages are sent in a format computers read faster than plain text.</li>
+    </ol>
+    <p>
+      HTTP/3 goes further by replacing TCP with <strong>QUIC</strong>, a newer transport built
+      on UDP. QUIC sets up connections faster and handles lost packets better, which helps
+      mobile users who switch between Wi-Fi and cellular data.
+    </p>
+  </main>
+
+  <footer id="site-footer">
+    <p>
+      This website is a class project for
+      <a href="https://ksuweb.github.io/IT3203/">IT 3203 Introduction to Web Development</a>
+      at Kennesaw State University, Fall 2026.
+    </p>
+  </footer>
+
+</body>
+</html>
+
+!--  footer- class project note with link to class site -->

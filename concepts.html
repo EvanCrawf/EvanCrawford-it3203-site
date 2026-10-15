@@ -1,0 +1,108 @@
+<!-- IT 3203 Milestone 1 - Home page - Evan Crawford -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP and HTTPS | Key Concepts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <p class="site-title">HTTP &amp; HTTPS: The Language of the Web</p>
+    <nav id="main-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">HTTP Versions</a></li>
+        <li><a href="security.html">HTTPS &amp; Security</a></li>
+        <li><a href="concepts.html" class="active">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Key Concepts</h1>
+    <p>These six ideas are the building blocks for understanding how HTTP and HTTPS work.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>1. Client and Server</h3>
+        <p>
+          The client (usually a web browser) asks for content. The server is the computer
+          that stores the website and sends that content back.
+        </p>
+      </div>
+      <div class="card">
+        <h3>2. Request and Response</h3>
+        <p>
+          Every HTTP exchange is a pair: the client sends a request, and the server answers
+          with a response containing a status code, headers, and usually a body.
+        </p>
+      </div>
+      <div class="card">
+        <h3>3. HTTP Methods</h3>
+        <p>
+          Methods tell the server what action to take. <code>GET</code> reads data,
+          <code>POST</code> sends new data, <code>PUT</code> updates it, and
+          <code>DELETE</code> removes it.
+        </p>
+      </div>
+      <div class="card">
+        <h3>4. Status Codes</h3>
+        <p>
+          Three-digit numbers that report the result. <code>200</code> means OK,
+          <code>301</code> means moved, <code>404</code> means not found, and
+          <code>500</code> means a server error.
+        </p>
+      </div>
+      <div class="card">
+        <h3>5. Headers</h3>
+        <p>
+          Extra information sent with a request or response, such as the content type,
+          the browser being used, or cookies.
+        </p>
+      </div>
+      <div class="card">
+        <h3>6. Statelessness</h3>
+        <p>
+          HTTP does not remember earlier requests on its own. Websites use cookies and
+          sessions to remember things like who is logged in.
+        </p>
+      </div>
+    </div>
+
+    <h2>Status Code Groups</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Range</th>
+          <th>Meaning</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1xx</td><td>Informational</td><td>100 Continue</td></tr>
+        <tr><td>2xx</td><td>Success</td><td>200 OK</td></tr>
+        <tr><td>3xx</td><td>Redirection</td><td>301 Moved Permanently</td></tr>
+        <tr><td>4xx</td><td>Client error</td><td>404 Not Found</td></tr>
+        <tr><td>5xx</td><td>Server error</td><td>500 Internal Server Error</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer id="site-footer">
+    <p>
+      This website is a class project for
+      <a href="https://ksuweb.github.io/IT3203/">IT 3203 Introduction to Web Development</a>
+      at Kennesaw State University, Fall 2026.
+    </p>
+  </footer>
+
+</body>
+</html>
+
+!--  footer- class project note with link to class site -->
