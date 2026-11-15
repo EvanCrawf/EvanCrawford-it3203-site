@@ -204,3 +204,181 @@ figcaption {
     padding: 16px;
   }
 }
+
+/* ---------- Milestone 2: Quiz page ---------- */
+
+/* timer bar sticks to the top of the screen while scrolling */
+.timer {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #1f3a5f;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* quiz.js adds this class in the last minute */
+.timer.warning {
+  background-color: #b33a3a;
+}
+
+/* each question is a fieldset styled like a card */
+.question {
+  background-color: white;
+  border: 1px solid #d3dce8;
+  border-left: 6px solid #2c6db5;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 0 0 18px 0;
+}
+
+.question legend {
+  background-color: #1f3a5f;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.question p {
+  margin-top: 4px;
+}
+
+/* each choice on its own line, and the whole label is clickable */
+.question label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.question input[type="text"],
+.question select {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 10px;
+  font-size: 1em;
+  border: 1px solid #b8c4d4;
+  border-radius: 4px;
+}
+
+/* blue glow on the box you are typing in */
+.question input[type="text"]:focus,
+.question select:focus {
+  outline: none;
+  border-color: #2c6db5;
+  box-shadow: 0 0 0 3px #d6e4f5;
+}
+
+.question input[type="radio"],
+.question input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #2c6db5;
+}
+
+.hint {
+  font-size: 0.9em;
+  color: #555555;
+}
+
+/* green or red after grading */
+.question.correct {
+  border-left-color: #2e7d4f;
+  background-color: #eef8f1;
+}
+
+.question.incorrect {
+  border-left-color: #b33a3a;
+  background-color: #fbeeee;
+}
+
+/* buttons side by side with flexbox */
+.quiz-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 22px;
+  font-size: 1em;
+  border: 2px solid #1f3a5f;
+  border-radius: 4px;
+  background-color: #1f3a5f;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2c6db5;
+  border-color: #2c6db5;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1f3a5f;
+}
+
+.btn-secondary:hover {
+  background-color: #e8eef6;
+  border-color: #1f3a5f;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* results box shown after submitting */
+.results {
+  background-color: white;
+  border: 1px solid #d3dce8;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.results h2 {
+  margin-top: 0;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
+
+.status.pass {
+  background-color: #2e7d4f;
+}
+
+.status.fail {
+  background-color: #b33a3a;
+}
+
+/* color the Result column in the table */
+.row-correct td:nth-child(2) {
+  color: #2e7d4f;
+  font-weight: bold;
+}
+
+.row-incorrect td:nth-child(2) {
+  color: #b33a3a;
+  font-weight: bold;
+}
+
+/* lets the results table scroll sideways on small phones */
+.table-wrap {
+  overflow-x: auto;
+}
+
+/* keep "10 / 10" on one line */
+.results td:last-child {
+  white-space: nowrap;
+}

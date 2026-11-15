@@ -1,5 +1,4 @@
-<!-- IT 3203 Milestone 1 - Home page - Evan Crawford -->
-
+<!-- Key Concepts page: 7 concepts as cards in a CSS grid, plus a status code table -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,7 @@
         <li><a href="security.html">HTTPS &amp; Security</a></li>
         <li><a href="concepts.html" class="active">Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
@@ -26,7 +26,7 @@
 
   <main>
     <h1>Key Concepts</h1>
-    <p>These six ideas are the building blocks for understanding how HTTP and HTTPS work.</p>
+    <p>These seven ideas are the building blocks for understanding how HTTP and HTTPS work.</p>
 
     <div class="card-grid">
       <div class="card">
@@ -71,6 +71,14 @@
         <p>
           HTTP does not remember earlier requests on its own. Websites use cookies and
           sessions to remember things like who is logged in.
+        </p>
+      </div>
+            <div class="card">
+        <h3>7. Caching</h3>
+        <p>
+          Browsers save copies of files like images and stylesheets so they do not have to
+          download them again. Headers such as <code>Cache-Control</code> tell the browser
+          how long a saved copy can be reused.
         </p>
       </div>
     </div>
