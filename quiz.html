@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- IT 3203 Milestone 2 - Quiz page - Evan Crawford -->
+<!-- 10-question self-assessment quiz on HTTP/HTTPS. Grading and the timer are in js/quiz.js -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP and HTTPS | Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- main menu, same on every page. Quiz link added for milestone 2 -->
+  <header id="site-header">
+    <p class="site-title">HTTP &amp; HTTPS: The Language of the Web</p>
+    <nav id="main-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">HTTP Versions</a></li>
+        <li><a href="security.html">HTTPS &amp; Security</a></li>
+        <li><a href="concepts.html">Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Self-Assessment Quiz</h1>
+    <p>
+      Test what you learned about HTTP and HTTPS. There are 10 questions worth 10 points
+      each. You need <strong>70 points</strong> to pass, and you have <strong>10 minutes</strong>.
+    </p>
+
+    <!-- countdown timer, the number is updated every second by quiz.js -->
+    <div id="timer-box" class="timer">Time left: <span id="timer">10:00</span></div>
+
+    <!-- results box stays hidden until the quiz is submitted -->
+    <section id="results" class="results" hidden>
+      <h2>Your Results</h2>
+      <p><span id="result-status" class="status"></span></p>
+      <p>Total score: <strong id="result-score"></strong></p>
+      <p>Time spent: <strong id="result-time"></strong></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Result</th>
+              <th>Your Answer</th>
+              <th>Correct Answer</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <!-- quiz.js adds one row per question here -->
+          <tbody id="result-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <form id="quiz-form">
+
+      <!-- Questions 1-3: fill in the blank (text inputs) -->
+      <fieldset class="question" id="q1-box">
+        <legend>Question 1</legend>
+        <label for="q1-input">HTTP stands for Hypertext ________ Protocol.</label>
+        <input type="text" id="q1-input" name="q1" placeholder="Type your answer">
+      </fieldset>
+
+      <fieldset class="question" id="q2-box">
+        <legend>Question 2</legend>
+        <label for="q2-input">The status code a server sends when a page is <em>not found</em> is ________.</label>
+        <input type="text" id="q2-input" name="q2" placeholder="Type a number">
+      </fieldset>
+
+      <fieldset class="question" id="q3-box">
+        <legend>Question 3</legend>
+        <label for="q3-input">HTTPS is HTTP running inside a secure ________ connection (Transport Layer Security).</label>
+        <input type="text" id="q3-input" name="q3" placeholder="Type the abbreviation">
+      </fieldset>
+
+      <!-- Questions 4-7: multiple choice, one answer (radio buttons share the same name) -->
+      <fieldset class="question" id="q4-box">
+        <legend>Question 4</legend>
+        <p>Which version of HTTP runs on QUIC instead of TCP?</p>
+        <label><input type="radio" name="q4" value="HTTP/1.0"> HTTP/1.0</label>
+        <label><input type="radio" name="q4" value="HTTP/1.1"> HTTP/1.1</label>
+        <label><input type="radio" name="q4" value="HTTP/2"> HTTP/2</label>
+        <label><input type="radio" name="q4" value="HTTP/3"> HTTP/3</label>
+      </fieldset>
+
+      <fieldset class="question" id="q5-box">
+        <legend>Question 5</legend>
+        <p>Who created HTTP while working at CERN?</p>
+        <label><input type="radio" name="q5" value="Bill Gates"> Bill Gates</label>
+        <label><input type="radio" name="q5" value="Tim Berners-Lee"> Tim Berners-Lee</label>
+        <label><input type="radio" name="q5" value="Steve Jobs"> Steve Jobs</label>
+        <label><input type="radio" name="q5" value="Vint Cerf"> Vint Cerf</label>
+      </fieldset>
+
+      <fieldset class="question" id="q6-box">
+        <legend>Question 6</legend>
+        <p>Which HTTP method is used to request (read) data from a server?</p>
+        <label><input type="radio" name="q6" value="POST"> POST</label>
+        <label><input type="radio" name="q6" value="GET"> GET</label>
+        <label><input type="radio" name="q6" value="PUT"> PUT</label>
+        <label><input type="radio" name="q6" value="DELETE"> DELETE</label>
+      </fieldset>
+
+      <fieldset class="question" id="q7-box">
+        <legend>Question 7</legend>
+        <p>What problem did multiplexing in HTTP/2 solve?</p>
+        <label><input type="radio" name="q7" value="No encryption"> No encryption</label>
+        <label><input type="radio" name="q7" value="Missing status codes"> Missing status codes</label>
+        <label><input type="radio" name="q7" value="Head-of-line blocking"> Head-of-line blocking</label>
+        <label><input type="radio" name="q7" value="Slow DNS lookups"> Slow DNS lookups</label>
+      </fieldset>
+
+      <!-- Question 8: dropdown (select), one answer -->
+      <fieldset class="question" id="q8-box">
+        <legend>Question 8</legend>
+        <label for="q8-select">Which group of status codes means there was a <em>server error</em>?</label>
+        <select id="q8-select" name="q8">
+          <option value="">-- Choose one --</option>
+          <option value="2xx">2xx</option>
+          <option value="3xx">3xx</option>
+          <option value="4xx">4xx</option>
+          <option value="5xx">5xx</option>
+        </select>
+      </fieldset>
+
+      <!-- Questions 9-10: multi-select, more than one right answer (checkboxes) -->
+      <fieldset class="question" id="q9-box">
+        <legend>Question 9</legend>
+        <p>Which of these does HTTPS provide? <span class="hint">(Select all that apply)</span></p>
+        <label><input type="checkbox" name="q9" value="Confidentiality"> Confidentiality</label>
+        <label><input type="checkbox" name="q9" value="Integrity"> Integrity</label>
+        <label><input type="checkbox" name="q9" value="Faster downloads"> Faster downloads</label>
+        <label><input type="checkbox" name="q9" value="Authentication"> Authentication</label>
+        <label><input type="checkbox" name="q9" value="Free web hosting"> Free web hosting</label>
+      </fieldset>
+
+      <fieldset class="question" id="q10-box">
+        <legend>Question 10</legend>
+        <p>Which features were introduced in HTTP/2? <span class="hint">(Select all that apply)</span></p>
+        <label><input type="checkbox" name="q10" value="Multiplexing"> Multiplexing</label>
+        <label><input type="checkbox" name="q10" value="The GET method"> The GET method</label>
+        <label><input type="checkbox" name="q10" value="Header compression"> Header compression</label>
+        <label><input type="checkbox" name="q10" value="Binary framing"> Binary framing</label>
+        <label><input type="checkbox" name="q10" value="Status codes"> Status codes</label>
+      </fieldset>
+
+      <!-- submit grades the quiz, retake clears everything and restarts the timer -->
+      <div class="quiz-buttons">
+        <button type="submit" id="submit-btn" class="btn">Submit Quiz</button>
+        <button type="button" id="reset-btn" class="btn btn-secondary">Retake Quiz</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- class project note with link to class site -->
+  <footer id="site-footer">
+    <p>
+      This website is a class project for
+      <a href="https://ksuweb.github.io/IT3203/">IT 3203 Introduction to Web Development</a>
+      at Kennesaw State University, Fall 2026.
+    </p>
+  </footer>
+
+  <!-- script goes at the end so the form is loaded before the JavaScript runs -->
+  <script src="js/quiz.js"></script>
+</body>
+</html>
